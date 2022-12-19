@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Drum Kit</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet" />
+</head>
+
+<body>
+  <h1 id="title">Drum 🥁 Kit</h1>
+  <div class="set">
+    <button class="w drum">w</button>
+    <button class="a drum">a</button>
+    <button class="s drum">s</button>
+    <button class="d drum">d</button>
+    <button class="j drum">j</button>
+    <button class="k drum">k</button>
+    <button class="l drum">l</button>
+  </div>
+  <footer>Made with ❤️ by Anil Reddy.</footer>
+</body>
+
+</html>
+<script>
+  let buttons = document.querySelectorAll('.drum')
+  //run foreach loop on buttons array
+  buttons.forEach(function (e) {
+    e.addEventListener('click', function () {
+      playSound(e.textContent);
+    })
+  })
+
+  function playSound(key) {
+    switch (key) {
+      case 'w':
+        let wSound = new Audio('sounds/tom-1.mp3');
+        wSound.play();
+        break;
+      case 'a':
+        let aSound = new Audio('sounds/tom-2.mp3');
+        aSound.play();
+        break;
+      case 's':
+        let sSound = new Audio('sounds/tom-3.mp3');
+        sSound.play();
+        break;
+      case 'd':
+        let dSound = new Audio('sounds/tom-4.mp3');
+        dSound.play();
+        break;
+      case 'j':
+        let jSound = new Audio('sounds/snare.mp3');
+        jSound.play();
+        break;
+      case 'k':
+        let kSound = new Audio('sounds/crash.mp3');
+        kSound.play();
+        break;
+      case 'l':
+        let lSound = new Audio('sounds/kick-bass.mp3');
+        lSound.play();
+        break;
+    }
+  }
+
+  //keydown is an event for keyboardkeys
+  document.addEventListener('keydown',function(event){
+    playSound(event.key)
+  })
+</script>
