@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown-menu</title>
+</head>
+<style>
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20%;
+    }
+
+    #dropdown {
+        position: relative;
+    }
+
+    h1 {
+        color: rgb(0, 132, 255);
+    }
+
+    .dropdown-menu {
+        display: none;
+        position: absolute;
+        z-index: 1;
+        margin: auto;
+    }
+
+    #dropdown:hover .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown-menu a {
+        display: flex;
+        flex-direction: row;
+        text-decoration: none;
+        background-color: black;
+        color: white;
+        padding: 30px;
+        margin: auto;
+    }
+</style>
+
+<body>
+    <div id="dropdown">
+        <h1>Frontend
+            <p class="dropdown-menu">
+                <a href="">HTML</a>
+                <a href="">CSS</a>
+                <a href="">JS</a>
+            </p>
+        </h1>
+    </div>
+</body>
+
+</html>
